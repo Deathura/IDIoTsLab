@@ -63,8 +63,8 @@ void setup(){
   
 void loop()
 {
-  // readAllTemperature();
-  // displayTemperature();
+  readAllTemperature();
+  displayTemperature();
   delay(READING_RATE); // DO NOT REMOVE
 }
 
@@ -75,9 +75,11 @@ void loop()
 void readAllTemperature()
 {
   int temperature = -1;
-
-
-  return temperature;
+  for(int j = 0; j < nbSensor; j++)
+  {
+    temperatures[j] = random(120);
+    Serial.println(temperatures[j]);
+  }
 }
 
 void displayTemperature()
